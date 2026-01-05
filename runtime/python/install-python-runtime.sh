@@ -10,13 +10,13 @@ do
 done
 
 rm -f ~/.condarc
-conda create -n sandbox-runtime -y python=3.10
+conda create -n sandbox-runtime -y python=3.11
 
 source activate sandbox-runtime
 
-if [ $USE_OFFICIAL_SOURCE -eq 0 ]; then
-    pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
-fi
+# if [ $USE_OFFICIAL_SOURCE -eq 0 ]; then
+#     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+# fi
 
 pip install -r ./requirements.txt --ignore-requires-python
 
